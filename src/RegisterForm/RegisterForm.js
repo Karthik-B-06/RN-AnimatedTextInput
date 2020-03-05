@@ -6,6 +6,7 @@ import { getStatusBarHeight } from 'react-native-status-bar-height';
 import { useFormData } from '../helpers/formData';
 import { WHITE } from '../helpers/styledTheme';
 import FormField from './components/FormField';
+
 const nameViewHeader = new Animated.Value(40);
 
 export const RegisterForm = (props) => {
@@ -20,20 +21,35 @@ export const RegisterForm = (props) => {
   });
   const [nameTapped, setNameTapped] = useState(false);
   const [nameEntered, setNameEntered] = useState(false);
+  const [editValue, setEditValue] = useState(false);
   const _onBlur = () => {
     setNameTapped(false);
     if (values && values.name && values.name.length > 0) {
       setNameEntered(true);
     }
+    setEditValue(false);
+  }
+  const _onFocus = () => {
+
+  }
+  const _onTap = () => {
+    if (nameTapped) {
+      setEditValue(false);
+    } else {
+      setNameTapped(!nameTapped);
+    }
+    setEditValue(true);
   }
   return (
     <View style={{ flex: 1, backgroundColor: WHITE }}>
       <View style={RegisterFormStyles.container}>
-        <TouchableHighlight underlayColor={WHITE} onPress={() => setNameTapped(!nameTapped)}>
+        <TouchableHighlight underlayColor={WHITE} onPress={_onTap}>
           <FormField
             _onBlur={_onBlur}
+            _onFocus={_onFocus}
             nameTapped={nameTapped}
             nameEntered={nameEntered}
+            editValue={editValue}
             nameViewHeader={nameViewHeader}
             handleChange={handleChange}
             value={values.name}
