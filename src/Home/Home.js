@@ -3,7 +3,7 @@ import { FlatList, StyleSheet, Text, TouchableHighlight, View } from 'react-nati
 import DeviceInfo from 'react-native-device-info';
 import { getStatusBarHeight } from 'react-native-status-bar-height';
 import ListItemIcon from '../assets/svg/common/ListItemIcon';
-import { BACKGROUND_BLACK, BORDER_COLOR, WHITE } from '../helpers/styledTheme';
+import { COLORS, SANS_BASE } from '../helpers/styledTheme';
 
 export const Home = (props) => {
   const screens = [
@@ -16,16 +16,16 @@ export const Home = (props) => {
   const _keyExtractor = item => item.id.toString();
   const _renderItem = ({ item, index }) => {
     return (
-      <TouchableHighlight underlayColor={BACKGROUND_BLACK} onPress={() => props.navigation.navigate(item.routeName)}>
+      <TouchableHighlight underlayColor={COLORS.BACKGROUND_BLACK} onPress={() => props.navigation.navigate(item.routeName)}>
         <View style={HomeScreenStyles.listItemView}>
-          <Text>{item.title}</Text>
+          <Text style={HomeScreenStyles.listItemText}>{item.title}</Text>
           <ListItemIcon fill='#96B4C8' />
         </View>
       </TouchableHighlight>
     )
   }
   return (
-    <View style={{ flex: 1, backgroundColor: WHITE }}>
+    <View style={{ flex: 1, backgroundColor: COLORS.WHITE }}>
       <FlatList
         style={HomeScreenStyles.list}
         data={screens}
@@ -40,7 +40,8 @@ export const Home = (props) => {
 const HomeScreenStyles = StyleSheet.create({
   listItemView: {
     padding: 12,
-    borderBottomColor: BORDER_COLOR,
+    paddingLeft: 0,
+    borderBottomColor: COLORS.BORDER_COLOR,
     borderBottomWidth: 1,
     marginLeft: 20,
     display: 'flex',
@@ -50,5 +51,9 @@ const HomeScreenStyles = StyleSheet.create({
   },
   list: {
     paddingTop: DeviceInfo.hasNotch ? getStatusBarHeight() + 20 : 30,
+  },
+  listItemText: {
+    fontFamily: SANS_BASE.FONT_REGULAR,
+    fontSize: 20
   }
 })

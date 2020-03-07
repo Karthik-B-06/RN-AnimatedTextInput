@@ -20,6 +20,19 @@
 		5EA423EFDDE68BA3764D24A1 /* libPods-RNAnimationBook.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 698DD6130E16F08E79E84104 /* libPods-RNAnimationBook.a */; };
 		6E777BA9B93AA3256F33829E /* libPods-RNAnimationBookTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 06796096C445884C765B9813 /* libPods-RNAnimationBookTests.a */; };
 		DBDCA44E7A3956E12CDBC231 /* libPods-RNAnimationBook-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D36200719D5DBABBD68B74F9 /* libPods-RNAnimationBook-tvOS.a */; };
+		26719C5E90B44FA6A1043739 /* Gabriela-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 52C769820735450BB950B9AA /* Gabriela-Bold.ttf */; };
+		A218A2B655E147CBA3DB9CF5 /* Gabriela-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 41C9A3E14BB948B08699A544 /* Gabriela-Medium.ttf */; };
+		30D9C044A7E644A18C977745 /* Gabriela-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FE9DDF43423F431C8E3C3D77 /* Gabriela-Regular.ttf */; };
+		F0CFA62313A04006B388AC75 /* Gabriela-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A66327F7B8DE46BFA2983DED /* Gabriela-SemiBold.ttf */; };
+		3B76F648B15C45699B87EA63 /* Klein-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1D965FDD9C524B058A6546EC /* Klein-Bold.ttf */; };
+		17FCA2E70A554AC0B222DB92 /* Klein-Book.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 52AFFBCBCC254B39918B5D8E /* Klein-Book.ttf */; };
+		5E65F93C935F41AEA5777CC0 /* Klein-BookItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E7CA6C7F34BA4F72BEF97A04 /* Klein-BookItalic.ttf */; };
+		2826CCD17855456EB1332675 /* Klein-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 835C5C5267594CEB9662D58F /* Klein-Medium.ttf */; };
+		ECBBCCA5322A434D9F03E40C /* Klein-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3B79CC2FE2094B74912EFE0A /* Klein-Regular.ttf */; };
+		5405A550629A4E0488A81944 /* MierB-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 394E1894329441C79D0744A7 /* MierB-Bold.ttf */; };
+		F178F4154E2D4ACAB286CB29 /* MierB-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2F0FD129D6FA495C8DB2D663 /* MierB-Italic.ttf */; };
+		5D5F69748C034D25B6AC859D /* MierB-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BBA0C6F6A56E42B692BF0148 /* MierB-Regular.ttf */; };
+		0D771F584EBD495B9C519093 /* TiemposHeadline-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 298E0E9C0D16489C94CBECB6 /* TiemposHeadline-Medium.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +80,19 @@
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
 		EFDFC4001957EFE5EDDAF217 /* Pods-RNAnimationBookTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNAnimationBookTests.release.xcconfig"; path = "Target Support Files/Pods-RNAnimationBookTests/Pods-RNAnimationBookTests.release.xcconfig"; sourceTree = "<group>"; };
+		52C769820735450BB950B9AA /* Gabriela-Bold.ttf */ = {isa = PBXFileReference; name = "Gabriela-Bold.ttf"; path = "../src/assets/fonts/Gabriela-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		41C9A3E14BB948B08699A544 /* Gabriela-Medium.ttf */ = {isa = PBXFileReference; name = "Gabriela-Medium.ttf"; path = "../src/assets/fonts/Gabriela-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		FE9DDF43423F431C8E3C3D77 /* Gabriela-Regular.ttf */ = {isa = PBXFileReference; name = "Gabriela-Regular.ttf"; path = "../src/assets/fonts/Gabriela-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		A66327F7B8DE46BFA2983DED /* Gabriela-SemiBold.ttf */ = {isa = PBXFileReference; name = "Gabriela-SemiBold.ttf"; path = "../src/assets/fonts/Gabriela-SemiBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		1D965FDD9C524B058A6546EC /* Klein-Bold.ttf */ = {isa = PBXFileReference; name = "Klein-Bold.ttf"; path = "../src/assets/fonts/Klein-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		52AFFBCBCC254B39918B5D8E /* Klein-Book.ttf */ = {isa = PBXFileReference; name = "Klein-Book.ttf"; path = "../src/assets/fonts/Klein-Book.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		E7CA6C7F34BA4F72BEF97A04 /* Klein-BookItalic.ttf */ = {isa = PBXFileReference; name = "Klein-BookItalic.ttf"; path = "../src/assets/fonts/Klein-BookItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		835C5C5267594CEB9662D58F /* Klein-Medium.ttf */ = {isa = PBXFileReference; name = "Klein-Medium.ttf"; path = "../src/assets/fonts/Klein-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		3B79CC2FE2094B74912EFE0A /* Klein-Regular.ttf */ = {isa = PBXFileReference; name = "Klein-Regular.ttf"; path = "../src/assets/fonts/Klein-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		394E1894329441C79D0744A7 /* MierB-Bold.ttf */ = {isa = PBXFileReference; name = "MierB-Bold.ttf"; path = "../src/assets/fonts/MierB-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		2F0FD129D6FA495C8DB2D663 /* MierB-Italic.ttf */ = {isa = PBXFileReference; name = "MierB-Italic.ttf"; path = "../src/assets/fonts/MierB-Italic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		BBA0C6F6A56E42B692BF0148 /* MierB-Regular.ttf */ = {isa = PBXFileReference; name = "MierB-Regular.ttf"; path = "../src/assets/fonts/MierB-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		298E0E9C0D16489C94CBECB6 /* TiemposHeadline-Medium.ttf */ = {isa = PBXFileReference; name = "TiemposHeadline-Medium.ttf"; path = "../src/assets/fonts/TiemposHeadline-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +191,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				F692F22BD74332B02C1F2188 /* Pods */,
+				44715589F78747048E8B4A7F /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -197,6 +224,27 @@
 			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
+		};
+		44715589F78747048E8B4A7F /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+				52C769820735450BB950B9AA /* Gabriela-Bold.ttf */,
+				41C9A3E14BB948B08699A544 /* Gabriela-Medium.ttf */,
+				FE9DDF43423F431C8E3C3D77 /* Gabriela-Regular.ttf */,
+				A66327F7B8DE46BFA2983DED /* Gabriela-SemiBold.ttf */,
+				1D965FDD9C524B058A6546EC /* Klein-Bold.ttf */,
+				52AFFBCBCC254B39918B5D8E /* Klein-Book.ttf */,
+				E7CA6C7F34BA4F72BEF97A04 /* Klein-BookItalic.ttf */,
+				835C5C5267594CEB9662D58F /* Klein-Medium.ttf */,
+				3B79CC2FE2094B74912EFE0A /* Klein-Regular.ttf */,
+				394E1894329441C79D0744A7 /* MierB-Bold.ttf */,
+				2F0FD129D6FA495C8DB2D663 /* MierB-Italic.ttf */,
+				BBA0C6F6A56E42B692BF0148 /* MierB-Regular.ttf */,
+				298E0E9C0D16489C94CBECB6 /* TiemposHeadline-Medium.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
 		};
 /* End PBXGroup section */
 
@@ -285,7 +333,7 @@
 		83CBB9F71A601CBA00E9B192 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0940;
+				LastUpgradeCheck = 940;
 				ORGANIZATIONNAME = Facebook;
 				TargetAttributes = {
 					00E356ED1AD99517003FC87E = {
@@ -338,6 +386,19 @@
 			files = (
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
+				26719C5E90B44FA6A1043739 /* Gabriela-Bold.ttf in Resources */,
+				A218A2B655E147CBA3DB9CF5 /* Gabriela-Medium.ttf in Resources */,
+				30D9C044A7E644A18C977745 /* Gabriela-Regular.ttf in Resources */,
+				F0CFA62313A04006B388AC75 /* Gabriela-SemiBold.ttf in Resources */,
+				3B76F648B15C45699B87EA63 /* Klein-Bold.ttf in Resources */,
+				17FCA2E70A554AC0B222DB92 /* Klein-Book.ttf in Resources */,
+				5E65F93C935F41AEA5777CC0 /* Klein-BookItalic.ttf in Resources */,
+				2826CCD17855456EB1332675 /* Klein-Medium.ttf in Resources */,
+				ECBBCCA5322A434D9F03E40C /* Klein-Regular.ttf in Resources */,
+				5405A550629A4E0488A81944 /* MierB-Bold.ttf in Resources */,
+				F178F4154E2D4ACAB286CB29 /* MierB-Italic.ttf in Resources */,
+				5D5F69748C034D25B6AC859D /* MierB-Regular.ttf in Resources */,
+				0D771F584EBD495B9C519093 /* TiemposHeadline-Medium.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
