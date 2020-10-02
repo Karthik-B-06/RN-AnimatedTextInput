@@ -1,54 +1,58 @@
-import React from 'react';
-import { FlatList, StyleSheet, Text, TouchableHighlight, View } from 'react-native';
-import DeviceInfo from 'react-native-device-info';
-import { getStatusBarHeight } from 'react-native-status-bar-height';
-import ListItemIcon from '../assets/svg/common/ListItemIcon';
-import { BACKGROUND_BLACK, BORDER_COLOR, WHITE } from '../helpers/styledTheme';
+import React, {useState} from 'react';
+import {StyleSheet, View} from 'react-native';
+import {SafeAreaView} from 'react-native-safe-area-context';
+import FormField from '../components/FormField';
+import {COLORS} from '../helpers/styledTheme';
 
-export const Home = (props) => {
-  const screens = [
-    {
-      title: 'Register',
-      routeName: 'Register',
-      id: 1
-    },
-  ]
-  const _keyExtractor = item => item.id.toString();
-  const _renderItem = ({ item, index }) => {
-    return (
-      <TouchableHighlight underlayColor={BACKGROUND_BLACK} onPress={() => props.navigation.navigate(item.routeName)}>
-        <View style={HomeScreenStyles.listItemView}>
-          <Text>{item.title}</Text>
-          <ListItemIcon fill='#96B4C8' />
-        </View>
-      </TouchableHighlight>
-    )
-  }
+export const Home = props => {
+  const [inputValue, setInputValue] = useState('');
+  const onHandleChange = (key, value) => {
+    setInputValue(value);
+  };
   return (
-    <View style={{ flex: 1, backgroundColor: WHITE }}>
-      <FlatList
-        style={HomeScreenStyles.list}
-        data={screens}
-        renderItem={_renderItem}
-        keyExtractor={_keyExtractor}
-      />
-    </View>
-  )
-}
-
+    <SafeAreaView style={HomeScreenStyles.container}>
+      <View style={HomeScreenStyles.formFieldWrapper}>
+        <View style={HomeScreenStyles.formField}>
+          <FormField
+            handleChange={onHandleChange}
+            value={inputValue}
+            defaultValue={inputValue}
+            textInputId="First name"
+            label="First Name"
+            textInputProps={{
+              returnKeyType: 'done',
+            }}
+          />
+        </View>
+        <View style={HomeScreenStyles.formField}>
+          <FormField
+            handleChange={onHandleChange}
+            value={inputValue}
+            defaultValue={inputValue}
+            textInputId="Last name"
+            label="Last Name"
+            textInputProps={{
+              returnKeyType: 'done',
+            }}
+          />
+        </View>
+      </View>
+    </SafeAreaView>
+  );
+};
 
 const HomeScreenStyles = StyleSheet.create({
-  listItemView: {
-    padding: 12,
-    borderBottomColor: BORDER_COLOR,
-    borderBottomWidth: 1,
-    marginLeft: 20,
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center'
+  container: {
+    flex: 1,
+    backgroundColor: COLORS.WHITE,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
-  list: {
-    paddingTop: DeviceInfo.hasNotch ? getStatusBarHeight() + 20 : 30,
-  }
-})
+  formFieldWrapper: {
+    width: '100%',
+    paddingHorizontal: 20,
+  },
+  formField: {
+    marginVertical: 20,
+  },
+});

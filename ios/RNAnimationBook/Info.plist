@@ -38,7 +38,7 @@
 		</dict>
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string></string>
+	<string/>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIRequiredDeviceCapabilities</key>
@@ -53,5 +53,21 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Gabriela-Bold.ttf</string>
+		<string>Gabriela-Medium.ttf</string>
+		<string>Gabriela-Regular.ttf</string>
+		<string>Gabriela-SemiBold.ttf</string>
+		<string>Klein-Bold.ttf</string>
+		<string>Klein-Book.ttf</string>
+		<string>Klein-BookItalic.ttf</string>
+		<string>Klein-Medium.ttf</string>
+		<string>Klein-Regular.ttf</string>
+		<string>MierB-Bold.ttf</string>
+		<string>MierB-Italic.ttf</string>
+		<string>MierB-Regular.ttf</string>
+		<string>TiemposHeadline-Medium.ttf</string>
+	</array>
 </dict>
 </plist>
