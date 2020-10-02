@@ -1,5 +1,5 @@
 <div align='center'>
-  <h3>Animated Text Input </h3>
+  <h1>Animated Text Input Concept</h1>
   <img src='./src/assets/recording.gif' />
 </div>
 
