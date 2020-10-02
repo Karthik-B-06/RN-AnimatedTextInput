@@ -141,7 +141,7 @@ const FormFieldStyles = StyleSheet.create({
   },
   formLabel: {
     fontFamily: SANS_BASE.FONT_BOLD,
-    fontSize: 17,
+    fontSize: 16,
     lineHeight: 17,
     color: COLORS.PRIMARY_BLACK,
   },
