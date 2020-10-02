@@ -7,22 +7,14 @@
  */
 
 import React from 'react';
-import { StatusBar, StyleSheet } from 'react-native';
-import { createStackNavigator } from '@react-navigation/stack';
+import {SafeAreaProvider} from 'react-native-safe-area-context';
 import Home from './src/Home';
-import { NavigationContainer } from '@react-navigation/native';
-import RegisterForm from './src/RegisterForm';
-const AppStack = createStackNavigator();
 const App = () => {
   return (
-    <NavigationContainer>
-      <AppStack.Navigator headerMode='none'>
-        <AppStack.Screen name="Home" component={Home} />
-        <AppStack.Screen name="Register" component={RegisterForm} />
-      </AppStack.Navigator>
-    </NavigationContainer>
+    <SafeAreaProvider>
+      <Home />
+    </SafeAreaProvider>
   );
 };
-
 
 export default App;

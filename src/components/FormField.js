@@ -1,11 +1,10 @@
 import isEqual from 'lodash/isEqual';
 import PropTypes from 'prop-types';
-import React, { useEffect, useState } from 'react';
-import { Animated, StyleSheet, Text, View } from 'react-native';
-import { TouchableHighlight } from 'react-native-gesture-handler';
-import { COLORS, SANS_BASE } from '../../helpers/styledTheme';
+import React, {useEffect, useState} from 'react';
+import {Animated, StyleSheet, Text} from 'react-native';
+import {TouchableHighlight} from 'react-native-gesture-handler';
+import {COLORS, SANS_BASE} from '../helpers/styledTheme';
 import TextInputWrapper from './TextInputWrapper';
-
 
 const FormField = ({
   handleChange,
@@ -13,23 +12,23 @@ const FormField = ({
   defaultValue,
   textInputId,
   label,
-  textInputProps
+  textInputProps,
 }) => {
-  const [textInputOpacity, setTextInputOpacity] = useState(new Animated.Value(0));
-  const [nameViewHeader, setNameViewHeader] = useState(new Animated.Value(60));
-  const [scaleFormField, setScaleFormField] = useState(new Animated.Value(0.85));
+  const [textInputOpacity] = useState(new Animated.Value(0));
+  const [nameViewHeader] = useState(new Animated.Value(60));
+  const [scaleFormField] = useState(new Animated.Value(0.85));
   const [nameTapped, setNameTapped] = useState(false);
   const [nameEntered, setNameEntered] = useState(false);
   const [editValue, setEditValue] = useState(false);
+
   const _onBlur = () => {
     setNameTapped(false);
-  }
-  const _onFocus = () => {
+  };
 
-  }
   const _onTap = () => {
     setNameTapped(!nameTapped);
-  }
+  };
+
   useEffect(() => {
     if (nameTapped) {
       setEditValue(true);
@@ -37,12 +36,12 @@ const FormField = ({
         Animated.stagger(100, [
           Animated.timing(nameViewHeader, {
             toValue: 95,
-            duration: 300
+            duration: 300,
           }),
           Animated.timing(textInputOpacity, {
             toValue: 1,
-            duration: 300
-          })
+            duration: 300,
+          }),
         ]),
         Animated.spring(scaleFormField, {
           toValue: 1,
@@ -50,8 +49,8 @@ const FormField = ({
           damping: 20,
           mass: 1,
           // useNativeDriver: true
-        })
-      ]).start();
+        }),
+      ]).start(() => {});
     } else {
       setEditValue(false);
       if (value && value.length > 0) {
@@ -59,52 +58,54 @@ const FormField = ({
         Animated.parallel([
           Animated.timing(nameViewHeader, {
             toValue: 70,
-            duration: 300
+            duration: 300,
           }),
           Animated.spring(scaleFormField, {
             toValue: 0.95,
             stiffness: 120,
             damping: 20,
             mass: 1,
-          })
-        ]).start()
+          }),
+        ]).start();
       } else {
         setNameEntered(true);
         Animated.parallel([
           Animated.timing(nameViewHeader, {
             toValue: 40,
-            duration: 300
+            duration: 300,
           }),
           Animated.timing(textInputOpacity, {
             toValue: 0,
-            duration: 300
+            duration: 300,
           }),
           Animated.spring(scaleFormField, {
             toValue: 0.95,
             stiffness: 120,
             damping: 20,
             mass: 1,
-          })
-        ]).start()
+          }),
+        ]).start();
       }
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [nameTapped]);
   return (
     <TouchableHighlight underlayColor={COLORS.WHITE} onPress={_onTap}>
-      <Animated.View style={[
-        FormFieldStyles.formInputView,
-        {
-          height: nameViewHeader
-        },
+      <Animated.View
+        style={[
+          FormFieldStyles.formInputView,
+          {
+            height: nameViewHeader,
+          },
 
-        {
-          transform: [
-            {
-              scale: scaleFormField
-            }
-          ]
-        }
-      ]}>
+          {
+            transform: [
+              {
+                scale: scaleFormField,
+              },
+            ],
+          },
+        ]}>
         <Text style={FormFieldStyles.formLabel}>{label}</Text>
         <TextInputWrapper
           _onBlur={_onBlur}
@@ -121,8 +122,8 @@ const FormField = ({
         />
       </Animated.View>
     </TouchableHighlight>
-  )
-}
+  );
+};
 const FormFieldStyles = StyleSheet.create({
   formInputView: {
     borderWidth: 1,
@@ -143,7 +144,7 @@ const FormFieldStyles = StyleSheet.create({
     fontSize: 17,
     lineHeight: 17,
     color: COLORS.PRIMARY_BLACK,
-  }
+  },
 });
 
 FormField.propTypes = {
@@ -154,8 +155,8 @@ FormField.propTypes = {
   value: PropTypes.string,
   nameEntered: PropTypes.bool,
   defaultValue: PropTypes.string,
-  textInputId: PropTypes.string
-}
+  textInputId: PropTypes.string,
+};
 
 FormField.defaultValue = {
   nameTapped: false,
@@ -164,15 +165,13 @@ FormField.defaultValue = {
   nameEntered: false,
   defaultValue: '',
   textInputId: '',
-  _onBlur: () => { },
-  handleChange: () => { },
-}
-
-
+  _onBlur: () => {},
+  handleChange: () => {},
+};
 
 const arePropsEqual = (prevProps, nextProps) => {
   const hasValueChanged = isEqual(prevProps.value, nextProps.value);
   return hasValueChanged;
-}
+};
 
 export default React.memo(FormField, arePropsEqual);
