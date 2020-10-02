@@ -12,16 +12,30 @@ export const Home = props => {
   return (
     <SafeAreaView style={HomeScreenStyles.container}>
       <View style={HomeScreenStyles.formFieldWrapper}>
-        <FormField
-          handleChange={onHandleChange}
-          value={inputValue}
-          defaultValue={inputValue}
-          textInputId="First name"
-          label="First Name"
-          textInputProps={{
-            returnKeyType: 'done',
-          }}
-        />
+        <View style={HomeScreenStyles.formField}>
+          <FormField
+            handleChange={onHandleChange}
+            value={inputValue}
+            defaultValue={inputValue}
+            textInputId="First name"
+            label="First Name"
+            textInputProps={{
+              returnKeyType: 'done',
+            }}
+          />
+        </View>
+        <View style={HomeScreenStyles.formField}>
+          <FormField
+            handleChange={onHandleChange}
+            value={inputValue}
+            defaultValue={inputValue}
+            textInputId="Last name"
+            label="Last Name"
+            textInputProps={{
+              returnKeyType: 'done',
+            }}
+          />
+        </View>
       </View>
     </SafeAreaView>
   );
@@ -37,5 +51,8 @@ const HomeScreenStyles = StyleSheet.create({
   formFieldWrapper: {
     width: '100%',
     paddingHorizontal: 20,
+  },
+  formField: {
+    marginVertical: 20,
   },
 });
