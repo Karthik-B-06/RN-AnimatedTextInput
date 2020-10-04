@@ -1,6 +1,6 @@
 import isEqual from 'lodash/isEqual';
 import PropTypes from 'prop-types';
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import {Animated, StyleSheet, Text} from 'react-native';
 import {TouchableHighlight} from 'react-native-gesture-handler';
 import {COLORS, SANS_BASE} from '../helpers/styledTheme';
@@ -14,9 +14,10 @@ const FormField = ({
   label,
   textInputProps,
 }) => {
-  const [textInputOpacity] = useState(new Animated.Value(0));
-  const [nameViewHeader] = useState(new Animated.Value(60));
-  const [scaleFormField] = useState(new Animated.Value(0.85));
+  const textInputRef = useRef();
+  const textInputOpacity = useRef(new Animated.Value(0)).current;
+  const nameViewHeader = useRef(new Animated.Value(60)).current;
+  const scaleFormField = useRef(new Animated.Value(0.85)).current;
   const [nameTapped, setNameTapped] = useState(false);
   const [nameEntered, setNameEntered] = useState(false);
   const [editValue, setEditValue] = useState(false);
@@ -50,7 +51,9 @@ const FormField = ({
           mass: 1,
           // useNativeDriver: true
         }),
-      ]).start(() => {});
+      ]).start(() => {
+        textInputRef.current?.getNode().focus();
+      });
     } else {
       setEditValue(false);
       if (value && value.length > 0) {
@@ -108,6 +111,7 @@ const FormField = ({
         ]}>
         <Text style={FormFieldStyles.formLabel}>{label}</Text>
         <TextInputWrapper
+          ref={textInputRef}
           _onBlur={_onBlur}
           textInputId={textInputId}
           handleChange={handleChange}

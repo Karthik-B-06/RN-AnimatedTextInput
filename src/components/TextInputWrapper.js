@@ -1,31 +1,28 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useRef, forwardRef, memo} from 'react';
 import {Animated, StyleSheet, TextInput} from 'react-native';
 import {COLORS, SANS_BASE} from '../helpers/styledTheme';
 
 const AnimatedTextInput = Animated.createAnimatedComponent(TextInput);
 
-const TextInputWrapper = ({
-  _onBlur,
-  _onFocus,
-  nameTapped,
-  handleChange,
-  textInputId,
-  placeholder,
-  value,
-  defaultValue,
-  textInputOpacity,
-  nameEntered,
-  editValue,
-  textInputProps,
-}) => {
-  const textInputRef = React.useRef(AnimatedTextInput);
-  const [textInputPosition] = useState(new Animated.ValueXY({x: 0, y: 0}));
-  const backgroundInterpolate = textInputPosition.x.interpolate({
-    inputRange: [-10, 0],
-    outputRange: [COLORS.WHITE, '#FAFAFA'],
-    extrapolate: 'clamp',
-  });
-  useEffect(() => {}, [nameTapped]);
+const TextInputWrapper = (
+  {
+    _onBlur,
+    _onFocus,
+    nameTapped,
+    handleChange,
+    textInputId,
+    placeholder,
+    value,
+    defaultValue,
+    textInputOpacity,
+    nameEntered,
+    editValue,
+    textInputProps,
+  },
+  ref,
+) => {
+  const textInputPosition = useRef(new Animated.ValueXY({x: 0, y: 0})).current;
+
   useEffect(() => {
     if (nameEntered) {
       Animated.spring(textInputPosition, {
@@ -44,32 +41,34 @@ const TextInputWrapper = ({
       }).start();
     }
   }, [nameEntered, editValue, textInputPosition]);
+
+  const backgroundInterpolate = textInputPosition.x.interpolate({
+    inputRange: [-10, 0],
+    outputRange: [COLORS.WHITE, '#FAFAFA'],
+    extrapolate: 'clamp',
+  });
+
   return (
     <Animated.View
-      style={[
-        {
-          opacity: textInputOpacity,
-        },
-        {
-          transform: [
-            {
-              translateX: textInputPosition.x,
-            },
-            {
-              translateY: textInputPosition.y,
-            },
-          ],
-        },
-      ]}>
+      style={{
+        opacity: textInputOpacity,
+        transform: [
+          {
+            translateX: textInputPosition.x,
+          },
+          {
+            translateY: textInputPosition.y,
+          },
+        ],
+      }}>
       <AnimatedTextInput
         value={value}
-        ref={textInputRef}
-        autoFocus={true}
+        ref={ref}
         defaultValue={defaultValue || ''}
         onBlur={_onBlur}
         editable={editValue}
         onFocus={_onFocus}
-        onChange={event => handleChange(textInputId, event.nativeEvent.text)}
+        onChangeText={value => handleChange(textInputId, value)}
         style={[
           TextInputWrapperStyles.textInput,
           {
@@ -97,8 +96,4 @@ const TextInputWrapperStyles = StyleSheet.create({
   },
 });
 
-const arePropsEqual = (prevProps, nextProps) => {
-  return false;
-};
-
-export default React.memo(TextInputWrapper, arePropsEqual);
+export default memo(forwardRef(TextInputWrapper));
