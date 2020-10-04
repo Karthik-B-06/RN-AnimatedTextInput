@@ -5,7 +5,6 @@
 
 ## :white_check_mark: Todos
 
-- [ ] Add ref to autofocus TextInput on Tap
 - [ ] Create an npm package
 - [ ] Refactor FormField and TextInputWrapper
 
